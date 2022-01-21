@@ -8,7 +8,7 @@ const config = {
     accessKeyId: process.env.ACCESS_KEY_ID,
     secretAccessKey: process.env.SECRET_ACCESS_KEY,
   },
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 8080,
 };
 
 export default config;

@@ -10,7 +10,8 @@ const posConvert = {
   pronoun: 'p,',
 };
 
-const getRandomWord = async (pos: string, letter: string = '') => {
+const getRandomWord = async (pos: string, letter = '') => {
+  console.log(letter);
   if (
     pos !== POSEnum.noun &&
     pos !== POSEnum.verb &&
@@ -34,10 +35,14 @@ const getRandomWord = async (pos: string, letter: string = '') => {
   };
 
   const res = await dynamoDb.scan(params).promise();
-  if (res.Items) {
+  if (res.Items && res.Items.length > 0) {
+    console.log(res.Items);
     return res.Items[getRandomInt(0, (res.Count || 1) - 1)];
   }
-  return null;
+  throw {
+    status: 500,
+    message: 'Could not find word because scan is expensive',
+  };
 };
 
 export default {

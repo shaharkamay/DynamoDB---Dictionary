@@ -22,7 +22,10 @@ const getWord = async (word: string) => {
   if (res.Items && res.Items.length > 0) {
     return res.Items;
   }
-  return null;
+  throw {
+    status: 500,
+    message: 'Could not find word because scan is expensive',
+  };
 };
 
 const getWordAndPOS = async (word: string, pos: string) => {
@@ -48,7 +51,10 @@ const getWordAndPOS = async (word: string, pos: string) => {
   if (res.Items && res.Items.length > 0) {
     return res.Items;
   }
-  return null;
+  throw {
+    status: 500,
+    message: 'Could not find word because scan is expensive',
+  };
 };
 
 export default {

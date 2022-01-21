@@ -25,19 +25,4 @@ const getWordAndPOS = async (
   }
 };
 
-const getRandomWord = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  try {
-    const { pos } = req.params;
-    const letter = (req.query.letter || '') as string;
-    const wordDef = await wordService.getRandomWord(pos, letter);
-    res.json(wordDef);
-  } catch (error) {
-    next(error);
-  }
-};
-
-export { getWord, getWordAndPOS, getRandomWord };
+export { getWord, getWordAndPOS };
