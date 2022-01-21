@@ -1,3 +1,4 @@
 import wordService from './word';
+import posService from './pos';
 
-export { wordService };
+export { wordService, posService };
