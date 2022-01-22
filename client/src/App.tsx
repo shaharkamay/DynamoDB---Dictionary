@@ -9,10 +9,6 @@ function App() {
   return (
     <ErrorProvider>
       <BrowserRouter>
-        {/* <Link to="/words/zone">zone</Link>
-      <br />
-      <Link to="/part-of-speech/adjective">adjective</Link> */}
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/words/:word" element={<Word />} />

@@ -4,5 +4,3 @@ export enum POSEnum {
   adjective = 'adjective',
   pronoun = 'pronoun',
 }
-
-// export type POS = POSEnum;

@@ -12,7 +12,7 @@ const getWord = async (event) => {
       },
     };
     const res = await dynamoDb.query(params).promise();
-
+    console.log(res);
     if (res.Items && res.Items.length > 0) {
       response.body = {
         message: 'success',
