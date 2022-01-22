@@ -25,3 +25,7 @@ const getWord = async (event) => {
   }
   return response;
 };
+
+module.exports = {
+  getWord,
+};
