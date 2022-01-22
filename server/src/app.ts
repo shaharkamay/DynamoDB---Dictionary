@@ -30,4 +30,6 @@ app.use('/api', apiRouter);
 
 app.use(errorHandler);
 
+// export { serverless(app) };
+
 export default app;

@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Word as WordType } from '../../@types/word';
 import ErrorContext from '../../contexts/ErrorContext';
-import split from 'split-string';
 import { Link } from 'react-router-dom';
 
 const Word = () => {
@@ -40,9 +39,9 @@ const Word = () => {
             <h3 key={`definitions-${i}`}>Definitions</h3>
             {word.definitions.map((def, j) => (
               <div key={`def${j}`}>
-                {split(def, { separator: ' ' }).map((word, i) => (
+                {def.split(' ').map((word, i) => (
                   <Link
-                    to={`/words/${word.replace(/\W/g, '')}`}
+                    to={`/words/${word.replace(/[^0-9a-z]/gi, '')}`}
                     key={`link-${i}`}
                   >
                     {word}{' '}
@@ -50,11 +49,6 @@ const Word = () => {
                 ))}
                 <br />
                 <br />
-                {console.log(
-                  split(def, {
-                    separator: ' ',
-                  })
-                )}
               </div>
             ))}
           </div>
