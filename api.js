@@ -16,7 +16,7 @@ const getWord = async (event) => {
     if (res.Items && res.Items.length > 0) {
       response.body = {
         message: 'success',
-        data: res.Items,
+        data: JSON.stringify(res.Items),
       };
     }
   } catch (error) {
