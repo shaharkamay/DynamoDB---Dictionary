@@ -28,7 +28,7 @@ functions:
       - Effect: 'Allow'
         Action:
           - 'dynamodb:GetItem'
-        # Resource: !GetAtt DictionaryTable.Arn
+        Resource: arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE_NAME}
   # createPost:
   #   handler: api.createPost
   #   name: create-post
