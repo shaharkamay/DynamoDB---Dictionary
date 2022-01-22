@@ -21,6 +21,7 @@ const getWord = async (event) => {
       };
     }
   } catch (error) {
+    console.log(error);
     response.statusCode = 500;
     response.message = 'Could not find word because scan is expensive';
   }
