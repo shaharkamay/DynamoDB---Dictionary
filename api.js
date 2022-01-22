@@ -14,10 +14,10 @@ const getWord = async (event) => {
     const res = await dynamoDb.query(params).promise();
 
     if (res.Items && res.Items.length > 0) {
-      return (response.body = {
+      response.body = {
         message: 'success',
         data: res.Items,
-      });
+      };
     }
   } catch (error) {
     response.statusCode = 500;
