@@ -28,7 +28,7 @@ functions:
       - Effect: 'Allow'
         Action:
           - 'dynamodb:GetItem'
-        Resource: !GetAtt DictionaryTable.Arn
+        # Resource: !GetAtt DictionaryTable.Arn
   # createPost:
   #   handler: api.createPost
   #   name: create-post
@@ -85,19 +85,18 @@ functions:
   #       Action:
   #         - 'dynamodb:Scan'
   #       Resource: !GetAtt PostsTable.Arn
-
-resources:
-  Resources:
-    DictionaryTable:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: ${self:custom.dictionaryTableName}
-        AttributeDefinitions:
-          - AttributeName: word
-            AttributeType: S
-        KeySchema:
-          - AttributeName: word
-            KeyType: S
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
+# resources:
+#   Resources:
+#     DictionaryTable:
+#       Type: AWS::DynamoDB::Table
+#       Properties:
+#         TableName: ${self:custom.dictionaryTableName}
+#         AttributeDefinitions:
+#           - AttributeName: word
+#             AttributeType: S
+#         KeySchema:
+#           - AttributeName: word
+#             KeyType: S
+#         ProvisionedThroughput:
+#           ReadCapacityUnits: 1
+#           WriteCapacityUnits: 1
