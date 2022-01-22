@@ -1,6 +1,8 @@
 const dynamoDb = require('./db');
+const config = require('./config');
 
 const getWord = async (event) => {
+  console.log(config);
   const response = { statusCode: 200 };
   console.log('here');
   try {
