@@ -17,9 +17,9 @@ plugins:
 functions:
   getWord:
     handler: api.getWord
-    name: get-post
+    name: get-word
     memorySize: 128 # mb
-    timeout: 5 # seconds
+    timeout: 15 # seconds
     events:
       - http:
           path: api/words/{word}

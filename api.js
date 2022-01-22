@@ -1,4 +1,4 @@
-const db = require('./db');
+const dynamoDb = require('./db');
 
 const getWord = async (event) => {
   try {
