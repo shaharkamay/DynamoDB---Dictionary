@@ -13,7 +13,7 @@ const getWord = async (event) => {
       ExpressionAttributeValues: {
         ':word': word.toUpperCase(),
       },
-    };
+    }; //h
     const res = await dynamoDb.query(params).promise();
     console.log(res);
     if (res.Items && res.Items.length > 0) {
