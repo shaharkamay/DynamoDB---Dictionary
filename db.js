@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 
-const config = require('../config');
+const config = require('./config');
 // Set the region
 AWS.config.update(config.aws);
 // Create DynamoDB document client
