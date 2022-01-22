@@ -2,6 +2,7 @@ const dynamoDb = require('./db');
 
 const getWord = async (event) => {
   const response = { statusCode: 200 };
+  console.log('here');
   try {
     const { word } = event.pathParameters;
     const params = {
