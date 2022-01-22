@@ -16,12 +16,12 @@ const getWord = async (event) => {
     if (res.Items && res.Items.length > 0) {
       response.body = {
         message: 'success',
-        data: JSON.stringify(res.Items),
+        data: res.Items,
       };
     }
   } catch (error) {
     response.statusCode = 500;
     response.message = 'Could not find word because scan is expensive';
   }
-  return response;
+  return JSON.stringify(response);
 };
