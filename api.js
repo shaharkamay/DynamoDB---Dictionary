@@ -3,7 +3,7 @@ const dynamoDb = require('./db');
 const getWord = async (event) => {
   try {
     const response = { statusCode: 200 };
-    const { word } = event;
+    const { word } = event.pathParameters;
     const params = {
       TableName: 'dictionary',
       KeyConditionExpression: 'word = :word',
