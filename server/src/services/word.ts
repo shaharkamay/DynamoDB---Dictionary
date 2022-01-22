@@ -17,8 +17,9 @@ const getWord = async (word: string) => {
       ':word': word.toUpperCase(),
     },
   };
+  console.log('before');
   const res = await dynamoDb.query(params).promise();
-
+  console.log('after');
   if (res.Items && res.Items.length > 0) {
     return res.Items;
   }

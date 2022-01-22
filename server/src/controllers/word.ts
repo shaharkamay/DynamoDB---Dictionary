@@ -3,10 +3,12 @@ import { wordService } from '../services';
 
 const getWord = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    console.log('getting word');
     const { word } = req.params;
     const wordDef = await wordService.getWord(word);
     res.json(wordDef);
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };
